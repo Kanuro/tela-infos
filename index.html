@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#202b39">
+  <title>FábricaTech | Sistema Interno de Produtos</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <header class="topbar">
+    <div class="container-fluid px-3 px-lg-4 d-flex align-items-center gap-3">
+      <div class="d-flex align-items-center gap-2 flex-shrink-0">
+        <span class="brand-mark"><i class="bi bi-buildings-fill"></i></span>
+        <span class="brand-name">Fábrica<span>Tech</span></span>
+      </div>
+      <div class="system-name">Sistema Interno de Produtos</div>
+      <div class="ms-auto d-flex align-items-center gap-3 gap-lg-4">
+        <div class="input-group input-group-sm top-search">
+          <span class="input-group-text"><i class="bi bi-search"></i></span>
+          <input id="searchInput" class="form-control" type="search" placeholder="Buscar produto, código ou lote..." aria-label="Buscar produto">
+        </div>
+        <button class="btn text-white p-0 position-relative" title="Notificações" aria-label="Notificações">
+          <i class="bi bi-bell fs-5"></i><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size:8px">1</span>
+        </button>
+        <div class="d-flex align-items-center gap-2">
+          <div class="profile-avatar">KT</div>
+          <span class="profile-name small">Operador <i class="bi bi-chevron-down ms-1"></i></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="d-flex">
+    <aside class="sidebar">
+      <nav class="nav flex-column" aria-label="Navegação principal">
+        <a href="#produto" class="nav-link active"><i class="bi bi-box-seam"></i><span>Produtos</span></a>
+        <a href="#estoques" class="nav-link" data-section="Estoque"><i class="bi bi-boxes"></i><span>Estoques</span></a>
+        <a href="#processos" class="nav-link" data-section="Processos"><i class="bi bi-gear"></i><span>Processos</span></a>
+        <a href="#documentos" class="nav-link" data-section="Documentos"><i class="bi bi-file-earmark-text"></i><span>Documentos</span></a>
+        <a href="#relatorios" class="nav-link" data-section="Relatórios"><i class="bi bi-graph-up-arrow"></i><span>Relatórios</span></a>
+        <a href="#configuracoes" class="nav-link" data-section="Configurações"><i class="bi bi-sliders"></i><span>Configurações</span></a>
+      </nav>
+    </aside>
+
+    <main class="main-area">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#inicio"><i class="bi bi-house-door-fill"></i></a></li>
+          <li class="breadcrumb-item"><a href="#produto">Produtos</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Detalhes do Produto</li>
+        </ol>
+      </nav>
+
+      <section id="produto" class="panel product-hero">
+        <div class="row g-3 align-items-stretch">
+          <div class="col-12 col-lg-4">
+            <div class="d-flex gap-3">
+              <div class="thumbs" aria-label="Imagens do produto">
+                <button class="thumb active" data-image="0" aria-label="Imagem frontal"><img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=120&q=80" onerror="this.src='https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80'" alt="Miniatura do fone"></button>
+                <button class="thumb" data-image="1" aria-label="Imagem lateral"><img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=120&q=80" alt="Miniatura lateral do fone"></button>
+                <button class="thumb" data-image="2" aria-label="Detalhe do produto"><img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=120&q=80" alt="Detalhe do fone"></button>
+                <button class="thumb" data-image="3" aria-label="Produto em uso"><img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=120&q=80" alt="Fone em uso"></button>
+              </div>
+              <div class="product-photo flex-grow-1">
+                <img id="mainProductImage" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=85" alt="Fone de ouvido Headphone Pro X1">
+                <button class="zoom-btn" id="zoomButton" title="Ampliar imagem" aria-label="Ampliar imagem"><i class="bi bi-search"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-5 product-details">
+            <span class="eyebrow">Eletrônico · Linha de áudio</span>
+            <h1 class="product-title">Headphone Pro X1</h1>
+            <p class="product-subtitle mb-3">Fone de ouvido over-ear com alta qualidade de som, conforto e tecnologia Bluetooth 5.3.</p>
+            <div class="row g-0">
+              <div class="col-4 metadata-col"><div class="metadata pe-2"><small>Código do Produto</small><strong>HT-001</strong></div></div>
+              <div class="col-4 metadata-col"><div class="metadata px-3"><small>Modelo</small><strong>Pro X1</strong></div></div>
+              <div class="col-4"><div class="metadata ps-3"><small>Marca</small><strong>JBL</strong></div></div>
+              <div class="col-4 metadata-col"><div class="metadata pe-2 border-0"><small>Categoria</small><strong>Áudio</strong></div></div>
+              <div class="col-4 metadata-col"><div class="metadata px-3 border-0"><small>Status</small><span class="status-pill">Em produção</span></div></div>
+              <div class="col-4"><div class="metadata ps-3 border-0"><small>Revisão</small><strong>R1</strong></div></div>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-3">
+            <section class="h-100 rounded border" style="border-color:var(--line)!important;background:#f8fafc">
+              <div class="px-3 py-3 border-bottom d-flex align-items-center gap-2">
+                <i class="bi bi-file-earmark-text fs-5"></i><h2 class="section-title mb-0">Especificações Principais</h2>
+              </div>
+              <table class="table spec-table mb-0">
+                <tbody>
+                  <tr><th scope="row">Peso</th><td>250 g</td></tr>
+                  <tr><th scope="row">Autonomia da bateria</th><td>Até 40 horas</td></tr>
+                  <tr><th scope="row">Tempo de carregamento</th><td>2 horas</td></tr>
+                  <tr><th scope="row">Impedância</th><td>32 Ω</td></tr>
+                  <tr><th scope="row">Frequência de resposta</th><td>20 Hz – 20 kHz</td></tr>
+                  <tr><th scope="row">Sensibilidade</th><td>100 dB</td></tr>
+                </tbody>
+              </table>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel tabs-panel">
+        <ul class="nav product-tabs" id="productTabs" role="tablist" aria-label="Seções do produto">
+          <li class="nav-item" role="presentation"><button class="nav-link active" id="spec-tab" data-bs-toggle="tab" data-bs-target="#spec-content" type="button" role="tab"><i class="bi bi-file-earmark-medical"></i>Especificações</button></li>
+          <li class="tab-separator"></li>
+          <li class="nav-item" role="presentation"><button class="nav-link" id="materials-tab" data-bs-toggle="tab" data-bs-target="#materials-content" type="button" role="tab"><i class="bi bi-layers"></i>Materiais</button></li>
+          <li class="tab-separator"></li>
+          <li class="nav-item" role="presentation"><button class="nav-link" id="components-tab" data-bs-toggle="tab" data-bs-target="#components-content" type="button" role="tab"><i class="bi bi-gear"></i>Componentes</button></li>
+          <li class="tab-separator"></li>
+          <li class="nav-item" role="presentation"><button class="nav-link" id="process-tab" data-bs-toggle="tab" data-bs-target="#process-content" type="button" role="tab"><i class="bi bi-cone-striped"></i>Processos de Fabricação</button></li>
+          <li class="tab-separator"></li>
+          <li class="nav-item" role="presentation"><button class="nav-link" id="docs-tab" data-bs-toggle="tab" data-bs-target="#docs-content" type="button" role="tab"><i class="bi bi-file-earmark-text"></i>Documentos</button></li>
+          <li class="tab-separator"></li>
+          <li class="nav-item" role="presentation"><button class="nav-link" id="notes-tab" data-bs-toggle="tab" data-bs-target="#notes-content" type="button" role="tab"><i class="bi bi-journal-text"></i>Observações</button></li>
+        </ul>
+      </section>
+
+      <div class="tab-content" id="productTabContent">
+        <div class="tab-pane fade show active" id="spec-content" role="tabpanel" aria-labelledby="spec-tab">
+          <div class="row g-3">
+            <div class="col-12 col-xl-4">
+              <section class="panel spec-box">
+                <div class="d-flex justify-content-between align-items-center gap-2"><h2 class="section-title mb-0"><i class="bi bi-file-earmark-text"></i>Detalhes do Produto</h2><button class="btn btn-sm btn-outline-secondary" id="exportSpecs" type="button" title="Exportar especificações em CSV"><i class="bi bi-download me-1"></i>CSV</button></div>
+                <table class="table spec-table">
+                  <tbody>
+                    <tr><th scope="row">Marca</th><td>JBL</td></tr>
+                    <tr><th scope="row">Modelo</th><td>Headphone Pro X1</td></tr>
+                    <tr><th scope="row">Tipo</th><td>Fone de ouvido over-ear</td></tr>
+                    <tr><th scope="row">Conexão</th><td>Bluetooth 5.3</td></tr>
+                    <tr><th scope="row">Autonomia da bateria</th><td>Até 40 horas</td></tr>
+                    <tr><th scope="row">Tempo de carregamento</th><td>2 horas</td></tr>
+                    <tr><th scope="row">Peso</th><td>250 g</td></tr>
+                    <tr><th scope="row">Impedância</th><td>32 Ω</td></tr>
+                    <tr><th scope="row">Frequência de resposta</th><td>20 Hz – 20 kHz</td></tr>
+                    <tr><th scope="row">Sensibilidade</th><td>100 dB</td></tr>
+                  </tbody>
+                </table>
+              </section>
+            </div>
+            <div class="col-12 col-xl-4">
+              <section class="panel spec-box mb-2">
+                <h2 class="section-title"><i class="bi bi-layers"></i>Materiais Utilizados</h2>
+                <div class="table-responsive">
+                  <table class="table table-bordered material-table mb-0">
+                    <thead><tr><th>Material</th><th>Aplicação</th><th>Qtd.</th></tr></thead>
+                    <tbody>
+                      <tr><td>Plástico ABS</td><td>Estrutura principal</td><td>40%</td></tr>
+                      <tr><td>Alumínio</td><td>Hastes ajustáveis</td><td>15%</td></tr>
+                      <tr><td>Espuma de memória</td><td>Almofadas auriculares</td><td>10%</td></tr>
+                      <tr><td>Couro sintético</td><td>Revestimento</td><td>20%</td></tr>
+                      <tr><td>Componentes eletrônicos</td><td>Placa e drivers</td><td>15%</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+              <section class="panel spec-box">
+                <h2 class="section-title"><i class="bi bi-cpu"></i>Componentes Eletrônicos</h2>
+                <table class="table table-sm spec-table">
+                  <thead><tr><th>Componente</th><th>Função</th></tr></thead>
+                  <tbody>
+                    <tr><td>Driver de áudio</td><td>Reprodução de som</td></tr>
+                    <tr><td>Placa Bluetooth 5.3</td><td>Conexão sem fio</td></tr>
+                    <tr><td>Bateria de íon-lítio</td><td>Alimentação</td></tr>
+                    <tr><td>Microfone</td><td>Chamadas e voz</td></tr>
+                  </tbody>
+                </table>
+              </section>
+            </div>
+            <div class="col-12 col-xl-4">
+              <section class="panel spec-box mb-2">
+                <h2 class="section-title"><i class="bi bi-star"></i>Principais Características</h2>
+                <ul class="feature-list">
+                  <li><i class="bi bi-check-lg"></i><span>Som estéreo de alta definição</span></li>
+                  <li><i class="bi bi-check-lg"></i><span>Cancelamento de ruído ativo (ANC)</span></li>
+                  <li><i class="bi bi-check-lg"></i><span>Conexão Bluetooth 5.3</span></li>
+                  <li><i class="bi bi-check-lg"></i><span>Bateria com até 40 horas de duração</span></li>
+                  <li><i class="bi bi-check-lg"></i><span>Microfone embutido para chamadas</span></li>
+                  <li><i class="bi bi-check-lg"></i><span>Design leve e ergonômico</span></li>
+                </ul>
+              </section>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="materials-content" role="tabpanel" aria-labelledby="materials-tab">
+          <section class="panel spec-box">
+            <h2 class="section-title"><i class="bi bi-layers"></i>Ficha de Materiais (BOM)</h2>
+            <p class="muted-label">Lista de materiais e aplicação na montagem do produto.</p>
+            <div class="table-responsive"><table class="table table-bordered material-table"><thead><tr><th>Cod. material</th><th>Material</th><th>Aplicação</th><th>Quantidade estimada</th><th>Observação</th></tr></thead><tbody>
+              <tr><td>MAT-001</td><td>Plástico ABS</td><td>Conchas e estrutura</td><td>40%</td><td>Inspecionar acabamento</td></tr>
+              <tr><td>MAT-002</td><td>Alumínio</td><td>Hastes</td><td>15%</td><td>Verificar rebarbas</td></tr>
+              <tr><td>MAT-003</td><td>Espuma de memória</td><td>Almofadas</td><td>10%</td><td>Conferir densidade</td></tr>
+              <tr><td>MAT-004</td><td>Couro sintético</td><td>Revestimento</td><td>20%</td><td>Sem rasgos ou manchas</td></tr>
+              <tr><td>MAT-005</td><td>Componentes eletrônicos</td><td>Placa e drivers</td><td>15%</td><td>Testar funcionamento</td></tr>
+            </tbody></table></div>
+          </section>
+        </div>
+        <div class="tab-pane fade" id="components-content" role="tabpanel" aria-labelledby="components-tab">
+          <section class="panel spec-box">
+            <h2 class="section-title"><i class="bi bi-cpu"></i>Cadastro de Componentes</h2>
+            <div class="table-responsive"><table class="table table-bordered material-table"><thead><tr><th>Código</th><th>Componente</th><th>Função</th><th>Controle de qualidade</th><th>Status</th></tr></thead><tbody>
+              <tr><td>CP-001</td><td>Driver de áudio</td><td>Reprodução sonora</td><td>Teste de frequência</td><td><span class="badge text-bg-success">Aprovado</span></td></tr>
+              <tr><td>CP-002</td><td>Placa Bluetooth 5.3</td><td>Conectividade</td><td>Teste de pareamento</td><td><span class="badge text-bg-success">Aprovado</span></td></tr>
+              <tr><td>CP-003</td><td>Bateria de íon-lítio</td><td>Alimentação</td><td>Teste de capacidade</td><td><span class="badge text-bg-warning">Em análise</span></td></tr>
+              <tr><td>CP-004</td><td>Microfone</td><td>Captura de voz</td><td>Teste de captação</td><td><span class="badge text-bg-success">Aprovado</span></td></tr>
+            </tbody></table></div>
+          </section>
+        </div>
+        <div class="tab-pane fade" id="process-content" role="tabpanel" aria-labelledby="process-tab">
+          <section class="panel spec-box">
+            <h2 class="section-title"><i class="bi bi-cone-striped"></i>Etapas do Processo de Fabricação</h2>
+            <div class="row g-3">
+              <div class="col-md-6 col-xl-3"><div class="border rounded p-3 h-100"><span class="badge text-bg-secondary mb-2">01</span><h3 class="h6 fw-bold">Recebimento</h3><p class="text-secondary small mb-0">Conferência de lote, quantidade e integridade das matérias-primas.</p></div></div>
+              <div class="col-md-6 col-xl-3"><div class="border rounded p-3 h-100"><span class="badge text-bg-secondary mb-2">02</span><h3 class="h6 fw-bold">Montagem mecânica</h3><p class="text-secondary small mb-0">Montagem das conchas, hastes e almofadas.</p></div></div>
+              <div class="col-md-6 col-xl-3"><div class="border rounded p-3 h-100"><span class="badge text-bg-secondary mb-2">03</span><h3 class="h6 fw-bold">Integração eletrônica</h3><p class="text-secondary small mb-0">Instalação da placa, bateria, drivers e microfone.</p></div></div>
+              <div class="col-md-6 col-xl-3"><div class="border rounded p-3 h-100"><span class="badge text-bg-secondary mb-2">04</span><h3 class="h6 fw-bold">Inspeção final</h3><p class="text-secondary small mb-0">Testes funcionais, inspeção visual e liberação do lote.</p></div></div>
+            </div>
+          </section>
+        </div>
+        <div class="tab-pane fade" id="docs-content" role="tabpanel" aria-labelledby="docs-tab">
+          <section class="panel spec-box">
+            <h2 class="section-title"><i class="bi bi-file-earmark-text"></i>Documentos Técnicos</h2>
+            <div class="list-group list-group-flush">
+              <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"><span><i class="bi bi-filetype-pdf text-danger me-2"></i>Ficha técnica — HT-001</span><span class="badge text-bg-light">PDF <i class="bi bi-download ms-1"></i></span></a>
+              <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"><span><i class="bi bi-file-earmark-spreadsheet text-success me-2"></i>Lista de materiais (BOM)</span><span class="badge text-bg-light">XLSX <i class="bi bi-download ms-1"></i></span></a>
+              <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"><span><i class="bi bi-file-earmark-check text-primary me-2"></i>Checklist de controle de qualidade</span><span class="badge text-bg-light">PDF <i class="bi bi-download ms-1"></i></span></a>
+            </div>
+            <p class="muted-label mt-3 mb-0">Exemplo visual: vincule os documentos reais do sistema aos itens acima.</p>
+          </section>
+        </div>
+        <div class="tab-pane fade" id="notes-content" role="tabpanel" aria-labelledby="notes-tab">
+          <section class="panel spec-box">
+            <h2 class="section-title"><i class="bi bi-journal-text"></i>Observações de Produção</h2>
+            <label for="productionNotes" class="form-label">Notas internas relacionadas ao produto</label>
+            <textarea class="form-control mb-3" id="productionNotes" rows="5" placeholder="Registre observações, pendências ou instruções para a equipe..."></textarea>
+            <button class="btn btn-factory" id="saveNotes"><i class="bi bi-save me-2"></i>Salvar observação neste navegador</button>
+            <span id="notesStatus" class="ms-3 text-success small" role="status"></span>
+          </section>
+        </div>
+      </div>
+
+      <footer class="panel bottom-cta">
+        <div class="d-flex align-items-center gap-3">
+          <i class="bi bi-info-circle cta-icon"></i>
+          <div><div class="cta-title">Precisa de mais informações ou consultar fornecedores?</div><p class="cta-text">Acesse a referência externa do produto para consultar documentação, preços e disponibilidade.</p></div>
+        </div>
+        <a class="btn btn-factory" href="https://www.jbl.com/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right me-2"></i>Ver em outros sites <i class="bi bi-chevron-right ms-2"></i></a>
+      </footer>
+      <div id="searchStatus" class="small text-secondary mt-2" aria-live="polite"></div>
+    </main>
+  </div>
+
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="appToast" class="toast" role="status" aria-live="polite" aria-atomic="true">
+      <div class="toast-header"><i class="bi bi-info-circle text-danger me-2"></i><strong class="me-auto">FábricaTech</strong><button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Fechar"></button></div>
+      <div class="toast-body toast-message" id="toastMessage">Ação realizada.</div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
